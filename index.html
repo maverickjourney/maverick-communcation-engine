@@ -1,13 +1,236 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Maverick Journey | Slack Demo</title><style>
-:root{--bg:#050914;--panel:#0c1428;--panel2:#101c38;--line:#233653;--text:#f4f7ff;--muted:#91a0bf;--blue:#4ea3ff;--cyan:#22e6ff;--purple:#9b5cff;--green:#2be68e;--yellow:#ffd166;--red:#ff5c7c;--orange:#ff9f43}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% -10%,rgba(78,163,255,.28),transparent 36%),radial-gradient(circle at 85% 8%,rgba(155,92,255,.18),transparent 30%),linear-gradient(180deg,#050914,#030611);color:var(--text)}button,input,textarea{font:inherit}a{color:inherit;text-decoration:none}.app{display:grid;grid-template-columns:280px 1fr;min-height:100vh}.side{position:sticky;top:0;height:100vh;padding:22px 16px;border-right:1px solid rgba(126,160,255,.18);background:rgba(3,6,14,.84);backdrop-filter:blur(20px)}.brand{display:flex;align-items:center;gap:12px;margin-bottom:22px}.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#102a66,#1b123b);border:1px solid rgba(78,163,255,.5);box-shadow:0 0 24px rgba(78,163,255,.35);font-weight:950;color:#cbeeff;font-size:25px;letter-spacing:-5px;padding-right:4px}.brand h1{margin:0;font-size:16px;letter-spacing:.09em;text-transform:uppercase}.brand p{margin:3px 0 0;color:var(--muted);font-size:12px}.nav{display:flex;flex-direction:column;gap:8px}.nav button{display:flex;align-items:center;gap:10px;border:1px solid transparent;border-radius:13px;padding:12px;color:#cbd7f1;background:transparent;text-align:left;cursor:pointer}.nav button:hover,.nav button.active{background:linear-gradient(90deg,rgba(78,163,255,.2),rgba(155,92,255,.1));border-color:rgba(126,160,255,.32);color:#fff}.badge{margin-left:auto;border-radius:99px;padding:2px 7px;font-size:11px;border:1px solid rgba(155,92,255,.45);color:#d9c8ff;background:rgba(155,92,255,.18)}.sideCard{position:absolute;left:16px;right:16px;bottom:18px;border:1px solid rgba(126,160,255,.2);background:linear-gradient(180deg,rgba(15,26,52,.92),rgba(7,12,24,.92));border-radius:17px;padding:14px}.avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#f0b36e,#6b3d22);font-weight:900}.sideCoach{display:flex;align-items:center;gap:10px}.sideCoach small,.muted{color:var(--muted)}main{padding:24px 24px 42px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.top h2{margin:0;font-size:25px;letter-spacing:-.03em}.top p{margin:5px 0 0;color:var(--muted)}.search{width:330px;background:rgba(8,14,28,.88);border:1px solid rgba(126,160,255,.24);border-radius:13px;color:#fff;padding:12px 14px;outline:none}.grid{display:grid;gap:16px}.cols2{grid-template-columns:1.08fr .92fr}.cols3{grid-template-columns:repeat(3,1fr)}.cols4{grid-template-columns:repeat(4,1fr)}.cols5{grid-template-columns:repeat(5,1fr)}.card{border:1px solid rgba(126,160,255,.2);background:linear-gradient(180deg,rgba(13,23,46,.94),rgba(7,12,25,.94));border-radius:18px;padding:16px;box-shadow:0 20px 70px rgba(0,0,0,.22)}.glow{box-shadow:0 0 0 1px rgba(78,163,255,.12),0 0 60px rgba(78,163,255,.12)}.panelTitle{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.panelTitle h3,.panelTitle h4{margin:0;text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:#d7e4ff}.pill{display:inline-flex;align-items:center;gap:5px;border-radius:99px;padding:4px 8px;border:1px solid rgba(126,160,255,.25);background:#101b33;color:#d9e5ff;font-size:11px}.green{border-color:rgba(43,230,142,.45);color:#9effcd}.red{border-color:rgba(255,92,124,.45);color:#ff9aac}.yellow{border-color:rgba(255,209,102,.45);color:#ffe3a3}.purple{border-color:rgba(155,92,255,.45);color:#dbc8ff}.blue{border-color:rgba(78,163,255,.45);color:#bfe3ff}.metric{min-height:116px;position:relative;overflow:hidden}.metric:after{content:"";position:absolute;right:-35px;top:-45px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(78,163,255,.25),transparent 70%)}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.num,.big{font-size:36px;font-weight:950;letter-spacing:-.05em;margin-top:8px}.delta{font-size:12px;color:var(--green);margin-left:6px}.bars{display:flex;align-items:flex-end;gap:6px;height:54px;margin-top:12px}.bars span{flex:1;min-height:10px;border-radius:7px 7px 0 0;background:linear-gradient(180deg,var(--blue),rgba(155,92,255,.72))}.list{display:flex;flex-direction:column;gap:10px}.row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:11px;border:1px solid rgba(126,160,255,.12);background:rgba(255,255,255,.025);border-radius:13px}.row strong{font-size:13px}.row small{display:block;color:var(--muted);margin-top:3px}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:12px 10px;border-bottom:1px solid rgba(126,160,255,.12);text-align:left;font-size:13px}.table th{text-transform:uppercase;color:var(--muted);letter-spacing:.1em;font-size:11px}.clientTop{display:flex;align-items:center;gap:10px}.clientAvatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:900;border:1px solid rgba(78,163,255,.28);background-size:cover;background-position:center}.face1{background:linear-gradient(135deg,#ffcf99,#6a4229)}.face2{background:linear-gradient(135deg,#7fd4ff,#1d3760)}.face3{background:linear-gradient(135deg,#ff99c8,#4d1937)}.face4{background:linear-gradient(135deg,#c7f9cc,#23543e)}.face5{background:linear-gradient(135deg,#f7d794,#4a3518)}.progress{height:7px;background:#16243c;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green),var(--cyan))}.redbar span{background:linear-gradient(90deg,var(--red),#ffa6b6)}.yellowbar span{background:linear-gradient(90deg,var(--yellow),#ff9f43)}.photoGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.fakePhoto{height:150px;border-radius:15px;border:1px solid rgba(126,160,255,.18);display:grid;place-items:center;text-align:center;overflow:hidden;position:relative}.food1{background:linear-gradient(135deg,#6d431e,#1e5339 48%,#d9c68a)}.food2{background:linear-gradient(135deg,#d19651,#315b32 45%,#f1dfb5)}.food3{background:linear-gradient(135deg,#9e3d3d,#492612 45%,#efe0be)}.body1{background:linear-gradient(135deg,#1d2b52,#111827 65%,#314c78)}.body2{background:linear-gradient(135deg,#273c75,#121829 65%,#4167a8)}.body3{background:linear-gradient(135deg,#2e5a83,#101827 65%,#6b95c8)}.fakePhoto:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.24),transparent 25%)}.fakePhoto span{position:relative;z-index:1;text-shadow:0 2px 8px #000}.timeline{position:relative;padding-left:22px}.timeline:before{content:"";position:absolute;left:7px;top:5px;bottom:5px;width:1px;background:rgba(126,160,255,.2)}.event{position:relative;margin:0 0 14px}.event:before{content:"";position:absolute;left:-20px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue)}.phoneWrap{display:grid;place-items:center}.phone{width:342px;height:700px;border:9px solid #111;border-radius:44px;background:linear-gradient(180deg,#071126,#030712);box-shadow:0 30px 90px rgba(0,0,0,.65),0 0 0 1px #333 inset;padding:18px;overflow:hidden}.phoneTop{display:flex;justify-content:space-between;margin-bottom:10px}.phoneTitle{border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:10px 0;margin-bottom:8px}.chatMsg{display:flex;gap:8px;margin:9px 0}.bubble{font-size:12.5px;line-height:1.35;border:1px solid rgba(126,160,255,.18);background:#111b32;border-radius:14px;padding:10px}.bubble.ai{background:linear-gradient(180deg,#10234a,#0b1832);border-color:rgba(78,163,255,.36)}.bubble.user{background:#18223b}.slackActions{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.slackActions button{border:1px solid rgba(155,92,255,.35);background:#0e1730;color:#dfe9ff;border-radius:10px;padding:8px 4px;font-size:10.5px}.section{display:none}.section.active{display:block}@media(max-width:1250px){.app{grid-template-columns:1fr}.side{position:relative;height:auto}.sideCard{position:static;margin-top:20px}.cols2,.cols3,.cols4,.cols5,.photoGrid{grid-template-columns:1fr}.search{width:180px}}
-</style></head><body><div class="app"><aside class="side"><div class="brand"><div class="logo">M</div><div><h1>Maverick Journey</h1><p>Slack Demo</p></div></div><nav class="nav"><button class="active" onclick="showTab('overview',this)"># Overview</button><button onclick="showTab('clientchat',this)">📱 Client Check-In</button><button onclick="showTab('trainerchat',this)">💬 Trainer Commands</button><button onclick="showTab('approvals',this)">✅ Approvals</button><button onclick="showTab('workflow',this)">⚙ Workflow</button></nav><div class="sideCard"><div class="sideCoach"><div class="avatar">#</div><div><strong>Slack AI Layer</strong><br><small>Client + Trainer + AI</small></div></div><p class="muted">Mobile check-ins · meal/photo uploads · reminders</p></div></aside><main><div class="top"><div><h2>Slack Workflow Demo</h2><p>Show how clients log naturally and trainers command the AI from Slack.</p></div><input class="search" placeholder="Search Slack messages..."/></div>
-<section id="overview" class="section active"><div class="grid cols3"><div class="card"><h3>Client logs naturally</h3><p class="muted">Clients send weight, meals, sleep, water, mood, photos, and notes without learning a complex app.</p></div><div class="card"><h3>AI organizes it</h3><p class="muted">Maverick Journey turns messages into structured logs, reminders, alerts, and dashboard updates.</p></div><div class="card"><h3>Trainer stays in control</h3><p class="muted">AI drafts messages and reminders, but the trainer can approve, edit, or send manually.</p></div></div><div class="card" style="margin-top:16px"><div class="panelTitle"><h4>Slack Channels</h4><span class="pill purple">Demo setup</span></div><table class="table"><thead><tr><th>Channel</th><th>Members</th><th>Purpose</th></tr></thead><tbody><tr><td>#sarah-k-coaching-room</td><td>Sarah, Coach Alex, Maverick AI</td><td>Daily check-ins, food photos, reminders</td></tr><tr><td>#trainer-command-center</td><td>Coach Alex, Maverick AI</td><td>Ask about any client and approve drafts</td></tr><tr><td>#weekly-reports</td><td>Coach Alex, Maverick AI</td><td>AI-generated weekly reports and risk summaries</td></tr></tbody></table></div></section>
-<section id="clientchat" class="section"><div class="grid cols2"><div class="phoneWrap"><div class="phone"><div class="phoneTop"><strong>9:41</strong><span>5G 🔋</span></div><div class="phoneTitle"><strong>🔒 sarah-k-coaching-room</strong><br><small class="muted">Private Slack channel · Sarah + Coach + AI</small></div><div class="chatMsg"><div class="clientAvatar face1">M</div><div class="bubble ai"><strong>Maverick Journey AI</strong><br>Good morning Sarah ☀️ Daily Check-In:<br>⚖️ Weight<br>😴 Sleep<br>💧 Water<br>💪 Workout<br>🙂 Mood</div></div><div class="chatMsg"><div class="clientAvatar face3">S</div><div class="bubble user">168.2 lbs, slept 7 hrs, water 32 oz so far, upper body later, mood 8/10. Uploading breakfast now.</div></div><div class="chatMsg"><div class="clientAvatar face1">M</div><div class="bubble ai">Logged ✅ Breakfast photo received. Protein looks on track. Aim for 40 oz water by lunch.</div></div><div class="chatMsg"><div class="clientAvatar face3">S</div><div class="bubble user">I’m going out to dinner tonight. Remind me to send a photo?</div></div><div class="chatMsg"><div class="clientAvatar face1">M</div><div class="bubble ai">Done ✅ I’ll remind you at 7 PM to send dinner photo and quick meal note.</div></div><div class="slackActions"><button>Check-In</button><button>Meal</button><button>Photo</button><button>Weight</button><button>Reminder</button><button>Ask AI</button></div></div></div><div class="card"><div class="panelTitle"><h4>Client Upload Examples</h4><span class="pill blue">Fake media</span></div><div class="photoGrid"><div class="fakePhoto food1"><span>Breakfast photo<br>Eggs + oats</span></div><div class="fakePhoto food2"><span>Lunch photo<br>Chicken rice</span></div><div class="fakePhoto body2"><span>Progress photo<br>Week 6</span></div></div><p class="muted">In the real version, Slack uploads would store to Supabase and update both dashboards automatically.</p></div></div></section>
-<section id="trainerchat" class="section"><div class="grid cols2"><div class="card"><div class="panelTitle"><h4>Trainer Command Conversation</h4><span class="pill green">AI assistant</span></div><div class="timeline"><div class="event"><strong>Coach:</strong> Who needs attention today?</div><div class="event"><strong>AI:</strong> Mike has low sleep, Jessica missed 2 check-ins, Anthony reported knee soreness, David is below water goal.</div><div class="event"><strong>Coach:</strong> Draft messages for all four.</div><div class="event"><strong>AI:</strong> Drafts ready. Mike = direct tone, Jessica = gentle reset, Anthony = safety check, David = hydration nudge.</div><div class="event"><strong>Coach:</strong> What did Sarah log today?</div><div class="event"><strong>AI:</strong> Weight 168.2, sleep 7h, mood 8/10, breakfast uploaded, workout planned.</div></div></div><div class="card"><div class="panelTitle"><h4>Trainer Commands</h4><span class="pill purple">Examples</span></div><div class="list"><div class="row"><div><strong>“Show me missed check-ins.”</strong><small>Ranks clients by urgency.</small></div></div><div class="row"><div><strong>“Draft Sarah’s weekly summary.”</strong><small>Creates client-facing report.</small></div></div><div class="row"><div><strong>“Remind Mike at 8 AM.”</strong><small>Creates scheduled Slack reminder.</small></div></div><div class="row"><div><strong>“Pull nutrition logs for David.”</strong><small>Summarizes meals and macro gaps.</small></div></div></div></div></div></section>
-<section id="approvals" class="section"><div class="card"><div class="panelTitle"><h4>Message Approval Queue</h4><span class="pill yellow">Trainer control</span></div><table class="table"><thead><tr><th>Client</th><th>Draft</th><th>Tone</th><th>Status</th></tr></thead><tbody><tr><td>Jessica Lee</td><td>“No stress — let’s reset with one simple check-in tonight.”</td><td>Gentle</td><td><span class="pill purple">Approve</span></td></tr><tr><td>Mike Thompson</td><td>“Sleep has been low 3 days. Let’s adjust today and prioritize recovery.”</td><td>Direct</td><td><span class="pill purple">Approve</span></td></tr><tr><td>Chris Johnson</td><td>“5-day streak. Strong work — let’s keep the momentum.”</td><td>Motivational</td><td><span class="pill green">Ready</span></td></tr></tbody></table></div></section>
-<section id="workflow" class="section"><div class="grid cols4"><div class="card"><h3>1. Client sends log</h3><p class="muted">Slack text, photo, or voice note.</p></div><div class="card"><h3>2. AI extracts data</h3><p class="muted">Weight, meals, sleep, water, mood, workout.</p></div><div class="card"><h3>3. Dashboard updates</h3><p class="muted">Trainer/client portals refresh with trends.</p></div><div class="card"><h3>4. Trainer acts</h3><p class="muted">Approve messages, adjust program, review reports.</p></div></div></section>
-</main></div><script>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Maverick Journey | Slack Communication Layer</title>
+<style>
+:root{
+  --bg:#050914;--panel:#0c1428;--panel2:#101c38;--line:#233653;--text:#f4f7ff;
+  --muted:#91a0bf;--blue:#4ea3ff;--cyan:#22e6ff;--purple:#9b5cff;--green:#2be68e;
+  --yellow:#ffd166;--red:#ff5c7c;--orange:#ff9f43;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 50% -10%,rgba(78,163,255,.28),transparent 36%),
+radial-gradient(circle at 85% 8%,rgba(155,92,255,.18),transparent 30%),
+linear-gradient(180deg,#050914,#030611);color:var(--text)}
+button,input{font:inherit}
+.app{display:grid;grid-template-columns:300px 1fr;min-height:100vh}
+.side{position:sticky;top:0;height:100vh;padding:22px 16px;border-right:1px solid rgba(126,160,255,.18);background:rgba(3,6,14,.84);backdrop-filter:blur(20px)}
+.brand{display:flex;gap:12px;align-items:center;margin-bottom:22px}
+.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#102a66,#1b123b);border:1px solid rgba(78,163,255,.5);box-shadow:0 0 24px rgba(78,163,255,.35);font-weight:950;color:#cbeeff;font-size:25px;letter-spacing:-5px;padding-right:4px}
+.brand h1{margin:0;font-size:16px;letter-spacing:.09em;text-transform:uppercase}.brand p{margin:3px 0 0;color:var(--muted);font-size:12px}
+.nav{display:flex;flex-direction:column;gap:8px}.nav button{display:flex;align-items:center;gap:10px;border:1px solid transparent;border-radius:13px;padding:12px;color:#cbd7f1;background:transparent;text-align:left;cursor:pointer}.nav button:hover,.nav button.active{background:linear-gradient(90deg,rgba(78,163,255,.2),rgba(155,92,255,.1));border-color:rgba(126,160,255,.32);color:#fff}
+.badge{margin-left:auto;border-radius:99px;padding:2px 7px;font-size:11px;border:1px solid rgba(155,92,255,.45);color:#d9c8ff;background:rgba(155,92,255,.18)}
+.sideCard{position:absolute;left:16px;right:16px;bottom:18px;border:1px solid rgba(126,160,255,.2);background:linear-gradient(180deg,rgba(15,26,52,.92),rgba(7,12,24,.92));border-radius:17px;padding:14px}
+.avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#f0b36e,#6b3d22);font-weight:900}
+.sideCoach{display:flex;align-items:center;gap:10px}.sideCoach small,.muted{color:var(--muted)}
+main{padding:24px 24px 42px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:18px}.top h2{margin:0;font-size:25px;letter-spacing:-.03em}.top p{margin:5px 0 0;color:var(--muted)}
+.search{width:330px;background:rgba(8,14,28,.88);border:1px solid rgba(126,160,255,.24);border-radius:13px;color:#fff;padding:12px 14px;outline:none}
+.grid{display:grid;gap:16px}.cols2{grid-template-columns:1.08fr .92fr}.cols3{grid-template-columns:repeat(3,1fr)}.cols4{grid-template-columns:repeat(4,1fr)}
+.card{border:1px solid rgba(126,160,255,.2);background:linear-gradient(180deg,rgba(13,23,46,.94),rgba(7,12,25,.94));border-radius:18px;padding:16px;box-shadow:0 20px 70px rgba(0,0,0,.22)}
+.glow{box-shadow:0 0 0 1px rgba(78,163,255,.12),0 0 60px rgba(78,163,255,.12)}
+.panelTitle{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.panelTitle h3,.panelTitle h4{margin:0;text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:#d7e4ff}
+.pill{display:inline-flex;align-items:center;gap:5px;border-radius:99px;padding:4px 8px;border:1px solid rgba(126,160,255,.25);background:#101b33;color:#d9e5ff;font-size:11px}.green{border-color:rgba(43,230,142,.45);color:#9effcd}.red{border-color:rgba(255,92,124,.45);color:#ff9aac}.yellow{border-color:rgba(255,209,102,.45);color:#ffe3a3}.purple{border-color:rgba(155,92,255,.45);color:#dbc8ff}.blue{border-color:rgba(78,163,255,.45);color:#bfe3ff}
+.big{font-size:36px;font-weight:950;letter-spacing:-.05em;margin-top:8px}.list{display:flex;flex-direction:column;gap:10px}.row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:11px;border:1px solid rgba(126,160,255,.12);background:rgba(255,255,255,.025);border-radius:13px}.row strong{font-size:13px}.row small{display:block;color:var(--muted);margin-top:3px}
+.hero{min-height:420px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(78,163,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(78,163,255,.055) 1px,transparent 1px);background-size:30px 30px;mask-image:radial-gradient(circle at center,black 0%,transparent 70%)}
+.orb{position:relative;margin:auto;width:190px;height:190px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(78,163,255,.45);background:radial-gradient(circle,rgba(78,163,255,.78),rgba(17,36,83,.5) 42%,transparent 68%);box-shadow:0 0 80px rgba(78,163,255,.48), inset 0 0 45px rgba(33,230,255,.2)}
+.orb:before,.orb:after{content:"";position:absolute;inset:-25px;border-radius:50%;border:1px solid rgba(33,230,255,.34);animation:spin 18s linear infinite}.orb:after{inset:-47px;border-color:rgba(155,92,255,.26);animation-duration:28s}@keyframes spin{to{transform:rotate(360deg)}}.orb b{font-size:60px;letter-spacing:-8px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.flowStep{text-align:center;border:1px solid rgba(126,160,255,.18);background:rgba(255,255,255,.025);border-radius:16px;padding:16px}.flowStep strong{display:block;margin-top:8px}
+.phoneWrap{display:grid;place-items:center}.phone{width:350px;height:700px;border:9px solid #111;border-radius:44px;background:linear-gradient(180deg,#071126,#030712);box-shadow:0 30px 90px rgba(0,0,0,.65),0 0 0 1px #333 inset;padding:18px;overflow:hidden}.phoneTop{display:flex;justify-content:space-between;margin-bottom:10px}.phoneTitle{border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:10px 0;margin-bottom:8px}.chatMsg{display:flex;gap:8px;margin:9px 0}.clientAvatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:900;border:1px solid rgba(78,163,255,.28)}.face1{background:linear-gradient(135deg,#ffcf99,#6a4229)}.face2{background:linear-gradient(135deg,#7fd4ff,#1d3760)}.face3{background:linear-gradient(135deg,#ff99c8,#4d1937)}.faceM{background:linear-gradient(135deg,#4ea3ff,#1b123b)}
+.bubble{font-size:12.5px;line-height:1.35;border:1px solid rgba(126,160,255,.18);background:#111b32;border-radius:14px;padding:10px}.bubble.ai{background:linear-gradient(180deg,#10234a,#0b1832);border-color:rgba(78,163,255,.36)}.bubble.user{background:#18223b}.slackActions{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.slackActions button{border:1px solid rgba(155,92,255,.35);background:#0e1730;color:#dfe9ff;border-radius:10px;padding:8px 4px;font-size:10.5px}
+.fakePhoto{height:130px;border-radius:15px;border:1px solid rgba(126,160,255,.18);display:grid;place-items:center;text-align:center;position:relative;overflow:hidden}.food1{background:linear-gradient(135deg,#6d431e,#1e5339 48%,#d9c68a)}.food2{background:linear-gradient(135deg,#d19651,#315b32 45%,#f1dfb5)}.body2{background:linear-gradient(135deg,#273c75,#121829 65%,#4167a8)}.doc{background:linear-gradient(135deg,#233b62,#121829 65%,#b8c7ff)}.fakePhoto:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.24),transparent 25%)}.fakePhoto span{z-index:1;text-shadow:0 2px 8px #000}
+.timeline{position:relative;padding-left:22px}.timeline:before{content:"";position:absolute;left:7px;top:5px;bottom:5px;width:1px;background:rgba(126,160,255,.2)}.event{position:relative;margin:0 0 14px}.event:before{content:"";position:absolute;left:-20px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue)}
+.section{display:none}.section.active{display:block}
+@media(max-width:1250px){.app{grid-template-columns:1fr}.side{position:relative;height:auto}.sideCard{position:static;margin-top:20px}.cols2,.cols3,.cols4,.flow{grid-template-columns:1fr}.search{width:180px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <div class="brand"><div class="logo">M</div><div><h1>Maverick Journey</h1><p>Slack Communication Layer</p></div></div>
+  <nav class="nav">
+    <button class="active" onclick="showTab('overview',this)">◈ What Slack Does</button>
+    <button onclick="showTab('client',this)">📱 Client Channels</button>
+    <button onclick="showTab('trainer',this)">💬 Trainer Channels</button>
+    <button onclick="showTab('middleman',this)">✦ Maverick AI Role</button>
+    <button onclick="showTab('examples',this)"># Example Channels</button>
+    <button onclick="showTab('pitch',this)">🎤 Trainer Pitch</button>
+  </nav>
+  <div class="sideCard">
+    <div class="sideCoach"><div class="avatar">#</div><div><strong>Slack is not the dashboard</strong><br><small>It is the communication layer</small></div></div>
+    <p class="muted">The dashboard organizes the data. Slack collects the conversation.</p>
+  </div>
+</aside>
+
+<main>
+<div class="top">
+  <div><h2>Slack as the AI Communication Layer</h2><p>Maverick Journey sits between trainer and client, using Slack to collect updates, organize conversations, and trigger reminders.</p></div>
+  <input class="search" placeholder="Search Slack workflow..." />
+</div>
+
+<section id="overview" class="section active">
+  <div class="card hero glow">
+    <div>
+      <div class="orb"><b>M</b></div>
+      <h1>Maverick Journey is the Middle-Man AI</h1>
+      <p class="muted">Slack is where the trainer and client communicate. Maverick Journey listens, organizes, summarizes, reminds, and updates the dashboard.</p>
+    </div>
+  </div>
+
+  <div class="grid cols3" style="margin-top:16px">
+    <div class="card"><h3>Client Uses Slack</h3><p class="muted">The client logs food, injuries, soreness, bloodwork documents, mood, weight, sleep, workouts, questions, and progress photos.</p></div>
+    <div class="card"><h3>Maverick AI Organizes</h3><p class="muted">The AI extracts the important details, stores them by client, flags risks, creates summaries, and updates the trainer dashboard.</p></div>
+    <div class="card"><h3>Trainer Acts Faster</h3><p class="muted">The trainer sees what matters, sends reminders, shares workout pointers, approves AI messages, and knows when to text or call directly.</p></div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="panelTitle"><h4>Slack Flow</h4><span class="pill purple">Communication system</span></div>
+    <div class="flow">
+      <div class="flowStep">📱<strong>Client sends update</strong><small class="muted">Food, injury, mood, photo, document</small></div>
+      <div class="flowStep">✦<strong>AI reads context</strong><small class="muted">Extracts useful info</small></div>
+      <div class="flowStep">🧠<strong>AI organizes</strong><small class="muted">Updates client profile</small></div>
+      <div class="flowStep">🔔<strong>AI reminds</strong><small class="muted">Food, water, photos, check-ins</small></div>
+      <div class="flowStep">🏋️<strong>Trainer coaches</strong><small class="muted">Messages, calls, adjusts plan</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="client" class="section">
+  <div class="grid cols2">
+    <div class="phoneWrap">
+      <div class="phone">
+        <div class="phoneTop"><strong>9:41</strong><span>5G 🔋</span></div>
+        <div class="phoneTitle"><strong>🔒 sarah-k-client-log</strong><br><small class="muted">Client input channel · Sarah + Maverick AI</small></div>
+        <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai">Morning Sarah. You can drop anything here today: meals, weight, workout, soreness, mood, questions, photos, or documents.</div></div>
+        <div class="chatMsg"><div class="clientAvatar face3">S</div><div class="bubble user">Breakfast: eggs, oats, berries. Weight 168.2. Slept 7 hours. Left knee feels a little tight.</div></div>
+        <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai">Logged ✅ I flagged knee tightness for Coach Alex and added your breakfast to today’s nutrition log.</div></div>
+        <div class="chatMsg"><div class="clientAvatar face3">S</div><div class="bubble user">Uploading my bloodwork PDF too for him to review later.</div></div>
+        <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai">Received ✅ I’ll organize the document under your profile for Coach Alex. I won’t diagnose or interpret medical results.</div></div>
+        <div class="slackActions"><button>Meal</button><button>Injury</button><button>Photo</button><button>Doc</button><button>Weight</button><button>Question</button></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="panelTitle"><h4>Client Input Channel</h4><span class="pill green">Main purpose</span></div>
+        <p>This is the channel where the client can dump anything they would normally text the trainer.</p>
+        <div class="list">
+          <div class="row"><div><strong>Food and meal photos</strong><small>Breakfast, lunch, dinner, snacks, drinks, cravings.</small></div><span class="pill blue">Log</span></div>
+          <div class="row"><div><strong>Injuries, soreness, pain notes</strong><small>AI flags the trainer so workouts can be adjusted.</small></div><span class="pill yellow">Flag</span></div>
+          <div class="row"><div><strong>Bloodwork or documents</strong><small>Stored and organized for trainer/provider review only. No AI diagnosis.</small></div><span class="pill red">Careful</span></div>
+          <div class="row"><div><strong>Progress photos</strong><small>Organized by date, week, and client profile.</small></div><span class="pill purple">Photo</span></div>
+          <div class="row"><div><strong>Questions or life updates</strong><small>Travel, stress, sleep, schedule, mood, motivation.</small></div><span class="pill green">Context</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="panelTitle"><h4>Fake Upload Examples</h4><span class="pill blue">What Slack captures</span></div>
+        <div class="grid cols4">
+          <div class="fakePhoto food1"><span>Breakfast<br>Photo</span></div>
+          <div class="fakePhoto food2"><span>Lunch<br>Photo</span></div>
+          <div class="fakePhoto body2"><span>Progress<br>Photo</span></div>
+          <div class="fakePhoto doc"><span>Bloodwork<br>PDF</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trainer" class="section">
+  <div class="grid cols2">
+    <div class="card glow">
+      <div class="panelTitle"><h4>Trainer Slack Workspace</h4><span class="pill purple">Organized by client</span></div>
+      <p>The trainer has Slack organized by client. They can click a client name and see that client’s channels.</p>
+      <div class="list">
+        <div class="row"><div><strong>Sarah Kim</strong><small>#sarah-k-client-log · #sarah-k-coach-updates · #sarah-k-reminders</small></div><span class="pill green">On track</span></div>
+        <div class="row"><div><strong>Mike Thompson</strong><small>#mike-t-client-log · #mike-t-recovery · #mike-t-reminders</small></div><span class="pill red">Low sleep</span></div>
+        <div class="row"><div><strong>Jessica Lee</strong><small>#jessica-l-client-log · #jessica-l-reset · #jessica-l-reminders</small></div><span class="pill yellow">Missed</span></div>
+        <div class="row"><div><strong>David Rodriguez</strong><small>#david-r-client-log · #david-r-nutrition · #david-r-reminders</small></div><span class="pill yellow">Hydration</span></div>
+      </div>
+    </div>
+
+    <div class="phone">
+      <div class="phoneTop"><strong>Trainer Slack</strong><span>Coach Alex</span></div>
+      <div class="phoneTitle"><strong>#trainer-command-center</strong><br><small class="muted">Coach Alex + Maverick Journey AI</small></div>
+      <div class="chatMsg"><div class="clientAvatar face2">A</div><div class="bubble user">Show me clients who need attention today.</div></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai">Mike has low sleep, Jessica missed 2 check-ins, Sarah reported knee tightness, David is below water goal.</div></div>
+      <div class="chatMsg"><div class="clientAvatar face2">A</div><div class="bubble user">Open Sarah’s latest updates.</div></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai">Sarah logged breakfast, 168.2 lbs, 7 hours sleep, knee tightness, and uploaded bloodwork. Dinner reminder is scheduled for 7 PM.</div></div>
+      <div class="chatMsg"><div class="clientAvatar face2">A</div><div class="bubble user">Draft a reminder and flag knee note.</div></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai">Draft ready. Knee note flagged in dashboard and Sarah’s profile.</div></div>
+    </div>
+  </div>
+
+  <div class="grid cols3" style="margin-top:16px">
+    <div class="card"><h3>Trainer can message directly</h3><p class="muted">The trainer can still text/call the client, but Slack shows when direct contact may be needed.</p></div>
+    <div class="card"><h3>Trainer can send reminders</h3><p class="muted">Meal photo reminders, water reminders, workout reminders, progress photo reminders, check-ins.</p></div>
+    <div class="card"><h3>Trainer sees organized history</h3><p class="muted">Instead of scattered texts, each client has a structured communication trail.</p></div>
+  </div>
+</section>
+
+<section id="middleman" class="section">
+  <div class="grid cols2">
+    <div class="card glow">
+      <div class="panelTitle"><h4>What Maverick Journey AI Does</h4><span class="pill purple">Middle-man AI</span></div>
+      <div class="timeline">
+        <div class="event"><strong>Collects:</strong> client messages, food logs, photos, injuries, documents, reminders, questions.</div>
+        <div class="event"><strong>Organizes:</strong> client profile, dashboard, nutrition log, photo library, reminder system, weekly report.</div>
+        <div class="event"><strong>Summarizes:</strong> what changed, who needs attention, what the trainer should review.</div>
+        <div class="event"><strong>Flags:</strong> missed check-ins, soreness, low sleep, low water, possible retention risk.</div>
+        <div class="event"><strong>Drafts:</strong> reminders, follow-ups, trainer messages, weekly summaries.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="panelTitle"><h4>Important Boundaries</h4><span class="pill red">Safety</span></div>
+      <div class="list">
+        <div class="row"><div><strong>Bloodwork and health documents</strong><small>Maverick Journey can organize and summarize file context, but should not diagnose, prescribe, or replace medical review.</small></div><span class="pill red">No diagnosis</span></div>
+        <div class="row"><div><strong>Injury notes</strong><small>AI flags the trainer. The trainer decides whether to adjust workouts, call, or refer out.</small></div><span class="pill yellow">Flag only</span></div>
+        <div class="row"><div><strong>Trainer remains in control</strong><small>AI drafts and organizes. Trainer approves messages and coaching decisions.</small></div><span class="pill green">Human-led</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="examples" class="section">
+  <div class="grid cols3">
+    <div class="card"><div class="panelTitle"><h4>#sarah-k-client-log</h4><span class="pill green">Client input</span></div><p class="muted">Sarah drops meals, weight, sleep, soreness, mood, documents, and daily notes here.</p></div>
+    <div class="card"><div class="panelTitle"><h4>#sarah-k-coach-updates</h4><span class="pill blue">Trainer to client</span></div><p class="muted">Coach Alex sends pointers, workout plan updates, weekly feedback, and coaching notes.</p></div>
+    <div class="card"><div class="panelTitle"><h4>#sarah-k-reminders</h4><span class="pill yellow">Automated reminders</span></div><p class="muted">Maverick Journey sends scheduled reminders: photos, water, food logs, check-ins, reflection.</p></div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="panelTitle"><h4>Channel Strategy</h4><span class="pill purple">Simple but organized</span></div>
+    <div class="list">
+      <div class="row"><div><strong>Client Log Channel</strong><small>Where the client types anything they need the trainer to know.</small></div><span class="pill green">Client input</span></div>
+      <div class="row"><div><strong>Coach Updates Channel</strong><small>Where the trainer sends workout plans, reminders, feedback, and pointers.</small></div><span class="pill blue">Trainer output</span></div>
+      <div class="row"><div><strong>Reminder Channel</strong><small>Where Maverick AI sends recurring and triggered reminders.</small></div><span class="pill yellow">Automation</span></div>
+      <div class="row"><div><strong>Trainer Command Center</strong><small>Where the trainer asks Maverick AI about any client.</small></div><span class="pill purple">Trainer AI</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pitch" class="section">
+  <div class="card glow">
+    <div class="panelTitle"><h4>How to explain this to trainers</h4><span class="pill purple">Presentation script</span></div>
+    <p><strong>“Slack is not the main dashboard. Slack is the communication layer.”</strong></p>
+    <p class="muted">Your clients already text you everything: meals, soreness, weight, photos, schedule issues, injuries, questions, and random updates. Maverick Journey brings that into Slack so the AI can organize it automatically.</p>
+    <p class="muted">Each client gets their own Slack space. They can send anything they want the trainer to know. Maverick Journey collects it, sorts it, and updates the trainer dashboard. Then the trainer can send reminders, feedback, workout updates, or decide when to call/text directly.</p>
+  </div>
+
+  <div class="grid cols3" style="margin-top:16px">
+    <div class="card"><h3>For the Client</h3><p class="muted">They get an easy place to send everything without learning a complicated fitness app.</p></div>
+    <div class="card"><h3>For the Trainer</h3><p class="muted">They get organized communication across every client instead of scattered texts and forgotten updates.</p></div>
+    <div class="card"><h3>For the AI</h3><p class="muted">Maverick Journey becomes the middle layer that turns conversations into organized coaching intelligence.</p></div>
+  </div>
+</section>
+</main>
+</div>
+
+<script>
 function showTab(id,btn){
  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
  document.getElementById(id).classList.add('active');
@@ -15,4 +238,6 @@ function showTab(id,btn){
  btn.classList.add('active');
  window.scrollTo(0,0);
 }
-</script></body></html>
+</script>
+</body>
+</html>
