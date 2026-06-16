@@ -1,7 +1,7 @@
-[README.md](https://github.com/user-attachments/files/28990830/README.md)
-# Maverick Journey — Slack Communication Layer
+[README.md](https://github.com/user-attachments/files/28992469/README.md)
+# Maverick Journey — Slack Communication Layer with Wearables
 
-This is the standalone Slack informational demo.
+This is the updated standalone Slack informational demo.
 
 ## Purpose
 
@@ -11,46 +11,74 @@ This page explains that Slack is not the main dashboard. Slack is the communicat
 
 Maverick Journey acts as the middle-man AI.
 
-Client → Slack → Maverick Journey AI → Trainer Dashboard / Trainer Slack
+Client → Slack → Maverick Journey AI → Trainer Dashboard / Client Dashboard / Trainer Slack
 
-## What Slack does for the client
+## Client-side channel concept
 
-The client can use Slack to send:
+Each client can have Slack channels such as:
 
-- Food logs
-- Meal photos
-- Progress photos
-- Weight
-- Sleep
-- Water intake
-- Mood
-- Soreness
-- Injuries
-- Schedule changes
-- Questions
-- Bloodwork or health documents
-- Personal notes the trainer should know
+- `#sarah-k-client-log`
+- `#sarah-k-health-sync`
+- `#sarah-k-reminders`
+- `#sarah-k-coach-updates`
 
-## What Slack does for the trainer
+The client log channel is where the client can write anything they want the trainer to know:
 
-The trainer can use Slack to:
+- food
+- meal photos
+- progress photos
+- injuries
+- soreness
+- sleep
+- mood
+- bloodwork or documents
+- travel
+- questions
+- missed workouts
+- diet issues
+- workout notes
 
-- View client communication by client
-- Click into each client’s channels
-- Send reminders
-- Send workout updates
-- Send coaching pointers
-- Ask Maverick Journey AI about any client
-- Review AI summaries
-- Approve AI-drafted messages
-- Know when a direct text or call is needed
+## Trainer-side alert concept
 
-## Channel structure shown
+If something seems off, urgent, or important, Maverick Journey can notify the trainer inside Slack.
 
-- Client Log Channel: where the client sends updates
-- Coach Updates Channel: where the trainer sends feedback, workout plans, reminders, and pointers
-- Reminder Channel: where Maverick Journey sends scheduled reminders
-- Trainer Command Center: where the trainer talks to Maverick Journey AI
+Examples:
+
+- injury note
+- low sleep
+- high fatigue
+- missed check-ins
+- poor nutrition trend
+- low water intake
+- client complaining or frustrated
+- workout pain
+- possible retention risk
+- direct call/text recommended
+
+## Wearable integration concept
+
+The client can connect wearable data through a data aggregator such as Terra API or ROOK.
+
+This could allow Maverick Journey to receive:
+
+- sleep data
+- HRV
+- resting heart rate
+- steps
+- calories
+- activity
+- workout sessions
+- recovery signals
+- Apple Health-style data
+- Oura / Whoop / Garmin / Fitbit-style data
+
+Then Maverick Journey can:
+
+- post a useful summary into Slack
+- update the trainer dashboard
+- update the client dashboard
+- trigger alerts if something looks off
+- help the trainer adjust workouts or reminders
 
 ## Important safety note
 
