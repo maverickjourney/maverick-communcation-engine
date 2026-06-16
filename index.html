@@ -56,6 +56,8 @@ main{padding:24px 24px 42px}.top{display:flex;justify-content:space-between;gap:
     <button onclick="showTab('client',this)">📱 Client Channels</button>
     <button onclick="showTab('trainer',this)">💬 Trainer Channels</button>
     <button onclick="showTab('middleman',this)">✦ Maverick AI Role</button>
+    <button onclick="showTab('alerts',this)">🚨 Urgent Alerts</button>
+    <button onclick="showTab('wearables',this)">⌚ Wearables + Health Data</button>
     <button onclick="showTab('examples',this)"># Example Channels</button>
     <button onclick="showTab('pitch',this)">🎤 Trainer Pitch</button>
   </nav>
@@ -195,6 +197,97 @@ main{padding:24px 24px 42px}.top{display:flex;justify-content:space-between;gap:
   </div>
 </section>
 
+
+<section id="alerts" class="section">
+  <div class="card glow">
+    <div class="panelTitle"><h4>When Something Seems Off</h4><span class="pill red">Trainer notification</span></div>
+    <p><strong>Maverick Journey does not just collect information. It watches for coaching signals.</strong></p>
+    <p class="muted">If a client writes something that sounds urgent, off-pattern, risky, or important, Maverick Journey can notify the trainer inside Slack and update the trainer dashboard.</p>
+  </div>
+
+  <div class="grid cols3" style="margin-top:16px">
+    <div class="card">
+      <h3>Client says something concerning</h3>
+      <p class="muted">“My knee hurts again,” “I felt dizzy,” “I missed two workouts,” “I binged last night,” “I feel really off today.”</p>
+    </div>
+    <div class="card">
+      <h3>Maverick Journey flags it</h3>
+      <p class="muted">AI classifies the update as injury, nutrition issue, recovery issue, emotional/motivation issue, missed check-in, or urgent trainer review.</p>
+    </div>
+    <div class="card">
+      <h3>Trainer gets notified</h3>
+      <p class="muted">The trainer gets a Slack alert telling them what happened and whether they should message, call, adjust the plan, or review the dashboard.</p>
+    </div>
+  </div>
+
+  <div class="grid cols2" style="margin-top:16px">
+    <div class="phone">
+      <div class="phoneTop"><strong>Trainer Alert</strong><span>Coach Alex</span></div>
+      <div class="phoneTitle"><strong>#trainer-command-center</strong><br><small class="muted">Maverick Journey AI → Trainer</small></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai"><strong>Urgent client flag: Sarah Kim</strong><br>Sarah reported left knee tightness and uploaded a workout note. Recommend reviewing lower-body programming before tonight.</div></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai"><strong>Suggested action:</strong><br>Send quick Slack message now. If pain is sharp or worsening, call directly and refer out if needed.</div></div>
+      <div class="chatMsg"><div class="clientAvatar face2">A</div><div class="bubble user">Draft a message to Sarah.</div></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai">Draft ready: “Sarah, thanks for flagging the knee tightness. Skip lower-body intensity today until I review. Is it sharp pain or just tightness?”</div></div>
+    </div>
+
+    <div class="card">
+      <div class="panelTitle"><h4>Alert Types</h4><span class="pill yellow">Examples</span></div>
+      <div class="list">
+        <div class="row"><div><strong>Injury / pain flag</strong><small>Knee pain, back tightness, dizziness, unusual soreness, workout discomfort.</small></div><span class="pill red">Review</span></div>
+        <div class="row"><div><strong>Diet issue</strong><small>Missed meals, binge eating, low protein, food anxiety, poor appetite, digestion complaints.</small></div><span class="pill yellow">Nutrition</span></div>
+        <div class="row"><div><strong>Recovery issue</strong><small>Low sleep, high stress, low HRV, elevated resting heart rate, fatigue.</small></div><span class="pill purple">Recovery</span></div>
+        <div class="row"><div><strong>Missed accountability</strong><small>No check-in, no workout upload, missed progress photos, skipped weigh-in.</small></div><span class="pill blue">Reminder</span></div>
+        <div class="row"><div><strong>Call / direct contact needed</strong><small>Maverick Journey can recommend when the trainer should call or text directly.</small></div><span class="pill green">Action</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wearables" class="section">
+  <div class="card glow">
+    <div class="panelTitle"><h4>Wearables + Health Data Aggregators</h4><span class="pill purple">Terra / ROOK / Apple Health concept</span></div>
+    <p><strong>Slack can also become the notification layer for wearable data.</strong></p>
+    <p class="muted">The client can connect a wearable data aggregator, such as Terra API or ROOK, which can collect data from devices and health platforms. Maverick Journey can use that data to update the trainer dashboard, client dashboard, and Slack summary channels.</p>
+  </div>
+
+  <div class="grid cols4" style="margin-top:16px">
+    <div class="card"><h3>Sleep</h3><p class="muted">Sleep duration, sleep quality, sleep score, bedtime consistency.</p></div>
+    <div class="card"><h3>Recovery</h3><p class="muted">HRV, resting heart rate, strain, fatigue signals, recovery score.</p></div>
+    <div class="card"><h3>Activity</h3><p class="muted">Steps, calories, workout sessions, active minutes, distance.</p></div>
+    <div class="card"><h3>Body metrics</h3><p class="muted">Weight, body composition, trends, check-in data when available.</p></div>
+  </div>
+
+  <div class="grid cols2" style="margin-top:16px">
+    <div class="phone">
+      <div class="phoneTop"><strong>Client Slack</strong><span>Sarah</span></div>
+      <div class="phoneTitle"><strong>#sarah-k-health-sync</strong><br><small class="muted">Auto-populated by Maverick Journey</small></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai"><strong>Wearable sync complete ✅</strong><br>Sleep: 6h 12m<br>Resting HR: +7 above baseline<br>Steps: 8,420<br>Workout readiness: lower than usual</div></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai">I updated your client dashboard and flagged recovery for Coach Alex.</div></div>
+      <div class="chatMsg"><div class="clientAvatar face3">S</div><div class="bubble user">That makes sense. I felt tired this morning.</div></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai">Logged. Coach Alex will see this context before today’s workout.</div></div>
+    </div>
+
+    <div class="phone">
+      <div class="phoneTop"><strong>Trainer Slack</strong><span>Coach Alex</span></div>
+      <div class="phoneTitle"><strong>#trainer-command-center</strong><br><small class="muted">Maverick Journey AI summary</small></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai"><strong>Recovery Alert: Sarah Kim</strong><br>Sleep dropped to 6h 12m and resting HR is above baseline. Consider lowering workout intensity today.</div></div>
+      <div class="chatMsg"><div class="clientAvatar face2">A</div><div class="bubble user">Update Sarah’s plan and draft a message.</div></div>
+      <div class="chatMsg"><div class="clientAvatar faceM">M</div><div class="bubble ai">Draft ready: “Sarah, your recovery looks a little low today. Let’s switch to a lighter session and focus on movement quality.”</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="panelTitle"><h4>How the wearable sync works</h4><span class="pill blue">Simple explanation</span></div>
+    <div class="flow">
+      <div class="flowStep">⌚<strong>Client connects wearable</strong><small class="muted">Apple Health, Garmin, Fitbit, Oura, Whoop, etc. through an aggregator.</small></div>
+      <div class="flowStep">🔗<strong>Aggregator collects data</strong><small class="muted">Terra / ROOK style integration layer.</small></div>
+      <div class="flowStep">✦<strong>Maverick Journey analyzes context</strong><small class="muted">Sleep, recovery, activity, trends.</small></div>
+      <div class="flowStep">#<strong>Slack gets summary</strong><small class="muted">Client and trainer channels receive useful updates.</small></div>
+      <div class="flowStep">📊<strong>Dashboards update</strong><small class="muted">Trainer and client dashboards show the organized data.</small></div>
+    </div>
+  </div>
+</section>
+
 <section id="examples" class="section">
   <div class="grid cols3">
     <div class="card"><div class="panelTitle"><h4>#sarah-k-client-log</h4><span class="pill green">Client input</span></div><p class="muted">Sarah drops meals, weight, sleep, soreness, mood, documents, and daily notes here.</p></div>
@@ -219,6 +312,7 @@ main{padding:24px 24px 42px}.top{display:flex;justify-content:space-between;gap:
     <p><strong>“Slack is not the main dashboard. Slack is the communication layer.”</strong></p>
     <p class="muted">Your clients already text you everything: meals, soreness, weight, photos, schedule issues, injuries, questions, and random updates. Maverick Journey brings that into Slack so the AI can organize it automatically.</p>
     <p class="muted">Each client gets their own Slack space. They can send anything they want the trainer to know. Maverick Journey collects it, sorts it, and updates the trainer dashboard. Then the trainer can send reminders, feedback, workout updates, or decide when to call/text directly.</p>
+    <p class="muted">The same idea can also apply to wearable data. If Sarah connects Apple Health, Garmin, Oura, Whoop, Fitbit, or another device through an aggregator like Terra API or ROOK, Maverick Journey can use that data to update Slack summaries and both dashboards with sleep, activity, recovery, and health trends.</p>
   </div>
 
   <div class="grid cols3" style="margin-top:16px">
