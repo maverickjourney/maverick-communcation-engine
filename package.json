@@ -1,0 +1,10 @@
+{
+  "name": "maverick-journey-communication-engine",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static public site ready for Vercel'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

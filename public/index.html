@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maverick Journey Communication Engine</title>
+  <meta name="description" content="Maverick Journey Communication Engine demo: web-based messaging, check-ins, urgent AI alerts, AI suggested replies, click-to-text, and optional Slack alerts." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="brand-mark">MJ</div>
+        <div>
+          <p class="eyebrow">Maverick Journey</p>
+          <h1>Communication Engine</h1>
+        </div>
+      </div>
+      <nav class="nav-pills" aria-label="Demo navigation">
+        <a href="#engine">Engine</a>
+        <a href="#alerts">Alerts</a>
+        <a href="#messaging">Messaging</a>
+        <a href="#architecture">Architecture</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-grid">
+        <div class="hero-card glass-card">
+          <div class="status-pill">New MVP direction</div>
+          <h2>Web-based communication first. Slack optional later.</h2>
+          <p class="hero-copy">
+            Maverick Journey is no longer built around Slack as the core communication system or database.
+            The product now owns the relationship through the trainer dashboard, client portal, in-app messaging,
+            client check-ins, urgent AI alerts, AI suggested replies, and click-to-text from the trainer's real phone.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#demo-flow">View trainer flow</a>
+            <a class="button secondary" href="#architecture">See source of truth</a>
+          </div>
+        </div>
+
+        <aside class="position-card glass-card" aria-label="Positioning summary">
+          <p class="mini-label">Positioning shift</p>
+          <div class="compare-row wrong">
+            <span>Old</span>
+            <strong>Slack Communication Layer</strong>
+            <p>Slack was treated like the main communication experience.</p>
+          </div>
+          <div class="compare-row right">
+            <span>New</span>
+            <strong>Maverick Journey Communication Engine</strong>
+            <p>The database owns all client history. Slack becomes an optional alert destination later.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="engine" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Core engine</p>
+          <h2>What the Communication Engine does</h2>
+          <p>
+            This is the real-time operating system between client, trainer, AI, and the database.
+            It captures what the client says, organizes it, creates alerts, recommends next steps, and keeps the trainer accountable.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="icon-dot">1</div>
+            <h3>Client in-app messaging</h3>
+            <p>Clients message the trainer inside Maverick Journey instead of relying on Slack as the main experience.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-dot">2</div>
+            <h3>Structured check-ins</h3>
+            <p>Clients log meals, workouts, sleep, soreness, mood, weight, symptoms, injuries, and progress updates.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-dot">3</div>
+            <h3>Urgent AI alerts</h3>
+            <p>The system flags dizziness, pain, missed check-ins, low recovery, unusual patterns, or anything needing trainer review.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-dot">4</div>
+            <h3>AI suggested replies</h3>
+            <p>AI drafts suggested responses and workout adjustment ideas for the trainer to approve, edit, or ignore.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-dot">5</div>
+            <h3>Click-to-text</h3>
+            <p>The trainer can tap a button to open their real phone messaging app with a prepared message to the client.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon-dot">6</div>
+            <h3>Optional Slack alerts later</h3>
+            <p>Slack can be added later as a notification channel, but it does not own the message history or client record.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="demo-flow" class="section-block split-layout">
+        <div>
+          <p class="eyebrow">Trainer demo flow</p>
+          <h2>Example: client reports dizziness after workout</h2>
+          <p>
+            This is the moment that makes Maverick Journey different from a basic fitness app.
+            The client message does not get buried. The system turns it into a trainer action.
+          </p>
+          <div class="flow-list">
+            <div class="flow-step"><span>Client</span><p>Sarah checks in through the client portal: “I felt dizzy after legs today and my heart rate felt weird.”</p></div>
+            <div class="flow-step"><span>AI</span><p>Maverick AI classifies the message as a potential recovery or safety concern and pulls recent sleep, workout, and check-in context.</p></div>
+            <div class="flow-step"><span>Database</span><p>The full message, category, risk level, timestamp, and AI summary are saved to Supabase.</p></div>
+            <div class="flow-step"><span>Trainer</span><p>The trainer dashboard shows an urgent flag on Sarah’s profile with suggested next steps.</p></div>
+          </div>
+        </div>
+
+        <div class="phone-panel" aria-label="Client message example">
+          <div class="phone-header">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="chat-card client">
+            <small>Sarah • Client portal</small>
+            <p>I felt dizzy after legs today and my heart rate felt weird. I had to sit down for a few minutes.</p>
+          </div>
+          <div class="chat-card ai">
+            <small>Maverick AI • internal analysis</small>
+            <p>Urgent review recommended. Possible recovery/symptom concern. Trainer should review workout intensity, hydration, sleep, and recent training load.</p>
+          </div>
+          <div class="chat-card trainer">
+            <small>Trainer alert</small>
+            <p>Sarah needs follow-up before next workout. Suggested action: check symptoms, reduce intensity today, and update plan if needed.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="alerts" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Urgent alert examples</p>
+          <h2>Alerts that create trainer accountability</h2>
+          <p>
+            Other platforms show data. Maverick Journey turns data into trainer action.
+            The trainer is responsible for reviewing the alert, checking in, changing the workout, tracking the issue, or approving an AI suggestion.
+          </p>
+        </div>
+        <div class="alert-board">
+          <article class="alert-card urgent">
+            <div class="alert-top"><strong>Urgent Review</strong><span>High</span></div>
+            <h3>Dizziness after workout</h3>
+            <p>Sarah reported dizziness and unusual heart rate feeling after training. Review recovery and adjust today’s plan.</p>
+            <div class="suggestion-box">
+              <strong>AI suggestion</strong>
+              <p>Ask Sarah to stop intense training today, confirm symptoms, review hydration/sleep, and consider a lighter recovery session. Recommend medical attention for severe or persistent symptoms.</p>
+            </div>
+          </article>
+          <article class="alert-card warning">
+            <div class="alert-top"><strong>Injury Watch</strong><span>Medium</span></div>
+            <h3>Knee pain during squats</h3>
+            <p>Client reported knee pain twice this week during lower-body workouts.</p>
+            <div class="suggestion-box">
+              <strong>AI suggestion</strong>
+              <p>Replace heavy squats with lower-impact alternatives, track pain score, and flag for trainer follow-up before next leg session.</p>
+            </div>
+          </article>
+          <article class="alert-card watch">
+            <div class="alert-top"><strong>Compliance Risk</strong><span>Watch</span></div>
+            <h3>Missed check-ins</h3>
+            <p>Client missed 3 check-ins and 2 nutrition logs in the last 7 days.</p>
+            <div class="suggestion-box">
+              <strong>AI suggestion</strong>
+              <p>Send a supportive message, simplify the next check-in, and ask what is making tracking hard this week.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="messaging" class="section-block messaging-demo">
+        <div class="section-heading compact">
+          <p class="eyebrow">MVP messaging</p>
+          <h2>Web messaging + click-to-text from trainer’s phone</h2>
+          <p>
+            The MVP should keep all messages and check-ins inside Maverick Journey first. When a trainer wants to text directly,
+            the system prepares the message and opens the trainer’s real texting app.
+          </p>
+        </div>
+
+        <div class="messaging-grid">
+          <div class="inbox-card">
+            <div class="inbox-header">
+              <h3>Trainer Inbox</h3>
+              <span>4 active items</span>
+            </div>
+            <button class="inbox-item active" data-case="dizzy">
+              <strong>Sarah M.</strong>
+              <span>Urgent: dizziness after workout</span>
+            </button>
+            <button class="inbox-item" data-case="knee">
+              <strong>John R.</strong>
+              <span>Knee pain repeated twice</span>
+            </button>
+            <button class="inbox-item" data-case="missed">
+              <strong>Maria L.</strong>
+              <span>Missed nutrition logs</span>
+            </button>
+            <button class="inbox-item" data-case="recovery">
+              <strong>Alex P.</strong>
+              <span>Low recovery trend</span>
+            </button>
+          </div>
+
+          <div class="reply-card">
+            <div class="reply-header">
+              <div>
+                <p class="mini-label">Selected alert</p>
+                <h3 id="case-title">Sarah M. — Urgent: dizziness after workout</h3>
+              </div>
+              <span id="case-risk" class="risk high">High</span>
+            </div>
+            <div class="message-box">
+              <p id="case-message">Sarah reported dizziness after her leg workout and said her heart rate felt unusual. She had to sit down for a few minutes.</p>
+            </div>
+            <div class="ai-reply-box">
+              <p class="mini-label">AI suggested trainer reply</p>
+              <p id="case-reply">Hey Sarah, I saw your check-in. Let’s pause intense training today. Can you tell me if you still feel dizzy, if you ate beforehand, and how much water you had? I’m going to adjust today’s plan to a lighter recovery session.</p>
+            </div>
+            <div class="reply-actions">
+              <a id="sms-link" class="button primary" href="sms:+15555550123?&body=Hey%20Sarah%2C%20I%20saw%20your%20check-in.%20Let%E2%80%99s%20pause%20intense%20training%20today.%20Can%20you%20tell%20me%20if%20you%20still%20feel%20dizzy%2C%20if%20you%20ate%20beforehand%2C%20and%20how%20much%20water%20you%20had%3F%20I%E2%80%99m%20going%20to%20adjust%20today%E2%80%99s%20plan%20to%20a%20lighter%20recovery%20session.">Click-to-text from trainer phone</a>
+              <button class="button secondary" type="button">Save task to Sarah’s profile</button>
+            </div>
+            <p class="fine-print">Click-to-text opens the trainer’s default SMS app. Maverick Journey prepares the message; the trainer sends it from their own phone number.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="architecture" class="section-block architecture-card">
+        <div>
+          <p class="eyebrow">Source of truth</p>
+          <h2>Supabase/database owns the client record</h2>
+          <p>
+            The biggest architectural change is that the database owns everything important. Slack should not be the place where Maverick Journey depends on history, retention, search, client records, uploads, or AI summaries.
+          </p>
+        </div>
+        <div class="architecture-flow" aria-label="System architecture flow">
+          <div class="node">Client Portal<br><span>messages, check-ins, uploads</span></div>
+          <div class="arrow">→</div>
+          <div class="node primary-node">Supabase Database<br><span>source of truth</span></div>
+          <div class="arrow">→</div>
+          <div class="node">AI Engine<br><span>alerts, summaries, replies</span></div>
+          <div class="arrow">→</div>
+          <div class="node">Trainer Dashboard<br><span>tasks, flags, profile history</span></div>
+        </div>
+        <div class="database-grid">
+          <div><strong>Messages</strong><span>In-app conversation history</span></div>
+          <div><strong>Check-ins</strong><span>Daily logs and weekly forms</span></div>
+          <div><strong>Alerts</strong><span>Urgent, warning, watch</span></div>
+          <div><strong>Uploads</strong><span>Photos, videos, files</span></div>
+          <div><strong>AI summaries</strong><span>Context and trainer notes</span></div>
+          <div><strong>Trainer tasks</strong><span>Follow-up, plan changes, reminders</span></div>
+        </div>
+      </section>
+
+      <section class="section-block slack-later">
+        <div class="slack-box">
+          <p class="eyebrow">Slack repositioned</p>
+          <h2>Slack becomes optional notifications later</h2>
+          <p>
+            Slack can still be useful for trainers who already live inside Slack. But it should only receive optional notifications like urgent alerts, daily summaries, or reminders.
+            It should not be the MVP’s main database, main client portal, or only communication system.
+          </p>
+          <div class="yes-no-grid">
+            <div>
+              <h3>Use Slack later for</h3>
+              <p>Trainer urgent alerts, daily digests, reminders, and optional team notifications.</p>
+            </div>
+            <div>
+              <h3>Do not use Slack for</h3>
+              <p>Source of truth, message ownership, client history, uploads, or the main MVP communication experience.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
