@@ -1,99 +1,34 @@
-[README.md](https://github.com/user-attachments/files/28992469/README.md)
-# Maverick Journey — Slack Communication Layer with Wearables
+[README.md](https://github.com/user-attachments/files/29164940/README.md)
+# Maverick Journey Communication Engine Demo
 
-This is the updated standalone Slack informational demo.
+This replaces the old Slack-first demo positioning.
 
-## Purpose
+## New product direction
 
-This page explains that Slack is not the main dashboard. Slack is the communication layer between the client, Maverick Journey AI, and the trainer.
+Maverick Journey is web-based first.
 
-## Core concept
+The MVP should be built around:
 
-Maverick Journey acts as the middle-man AI.
+- Trainer dashboard
+- Client portal
+- In-app messaging
+- Client check-ins
+- Urgent AI alerts
+- AI suggested replies
+- Trainer tasks and accountability
+- Click-to-text from the trainer's real phone
+- Supabase/database as the source of truth
+- Slack only as an optional notification integration later
 
-Client → Slack → Maverick Journey AI → Trainer Dashboard / Client Dashboard / Trainer Slack
+## Vercel settings
 
-## Client-side channel concept
+Framework Preset: Other
+Build Command: npm run build
+Output Directory: public
+Install Command: npm install
 
-Each client can have Slack channels such as:
+## Important architecture note
 
-- `#sarah-k-client-log`
-- `#sarah-k-health-sync`
-- `#sarah-k-reminders`
-- `#sarah-k-coach-updates`
+Slack should not own the core client history, messages, uploads, alerts, AI summaries, check-ins, or trainer tasks.
 
-The client log channel is where the client can write anything they want the trainer to know:
-
-- food
-- meal photos
-- progress photos
-- injuries
-- soreness
-- sleep
-- mood
-- bloodwork or documents
-- travel
-- questions
-- missed workouts
-- diet issues
-- workout notes
-
-## Trainer-side alert concept
-
-If something seems off, urgent, or important, Maverick Journey can notify the trainer inside Slack.
-
-Examples:
-
-- injury note
-- low sleep
-- high fatigue
-- missed check-ins
-- poor nutrition trend
-- low water intake
-- client complaining or frustrated
-- workout pain
-- possible retention risk
-- direct call/text recommended
-
-## Wearable integration concept
-
-The client can connect wearable data through a data aggregator such as Terra API or ROOK.
-
-This could allow Maverick Journey to receive:
-
-- sleep data
-- HRV
-- resting heart rate
-- steps
-- calories
-- activity
-- workout sessions
-- recovery signals
-- Apple Health-style data
-- Oura / Whoop / Garmin / Fitbit-style data
-
-Then Maverick Journey can:
-
-- post a useful summary into Slack
-- update the trainer dashboard
-- update the client dashboard
-- trigger alerts if something looks off
-- help the trainer adjust workouts or reminders
-
-## Important safety note
-
-Maverick Journey may organize bloodwork or health documents for review, but it should not diagnose, prescribe, or replace medical guidance.
-
-## Repo files
-
-This repo only needs:
-
-- `index.html`
-- `README.md`
-
-## Vercel setup
-
-- Framework Preset: Other / No Framework
-- Build Command: blank
-- Output Directory: blank or `.`
-- Install Command: blank
+The database should own everything. Slack can later receive optional notifications only.
